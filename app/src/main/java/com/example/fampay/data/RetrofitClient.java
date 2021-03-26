@@ -14,19 +14,6 @@ import static com.example.fampay.data.UrlHelper.getAPIService;
 public class RetrofitClient {
     private static Retrofit retrofit;
 
-//    static  {
-//        RetrofitClient apiManager=null;
-//        // To ensure use of single instance only throughout the application's codebase
-//       RetrofitClient instance;
-//         {
-//            if (apiManager == null) {
-//                apiManager= new RetrofitClient();
-//            }
-//
-//        }
-//
-//        return apiManager;
-//    }
     private APIService apiService;
 
     public static Retrofit getRetrofitInstance(Context context) {
@@ -49,9 +36,7 @@ public class RetrofitClient {
         OkHttpClient.Builder clientBuilder = new OkHttpClient.Builder()
                 .addInterceptor(interceptor);
         return clientBuilder.build();
-
     }
-//    apiService = retrofit.create(ApiService::class.java)
 
 
 }

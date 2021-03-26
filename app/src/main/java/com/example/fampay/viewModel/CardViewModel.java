@@ -29,7 +29,6 @@ public class CardViewModel extends ViewModel {
      * True if successfully fetched, false otherwise.
      */
     public MutableLiveData<Boolean> successfulFetch = new MutableLiveData();
-//    private val tag = CardGroupViewModel::class.java.simpleName
     public List<CardGroup> cardGroups = new ArrayList<>();
     public String errorMessage;
     private Repository repository = new Repository();

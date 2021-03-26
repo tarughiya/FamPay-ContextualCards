@@ -19,7 +19,7 @@ import com.example.fampay.viewModel.CardViewModel;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    //    private  CardViewModel cardGroupViewModel= new CardViewModel();
+
     CardViewModel cardGroupViewModel = new ViewModelProvider(this).get(CardViewModel.class);
     private SwipeRefreshLayout swipe_refresh;
     private CardGroupAdapter cardgroupAdapter;
@@ -27,17 +27,12 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout err_layout;
     private TextView error_layout_tv_message;
 
-
-//    private val cardGroupViewModel by lazy {
-//        ViewModelProvider(this).get(CardGroupViewModel::class.java)
-//    }
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-        // setting up the main recycler view
+
         cardgroupAdapter = new CardGroupAdapter(this);
         rv_card_groups.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         rv_card_groups.setAdapter(cardgroupAdapter);
@@ -109,7 +104,6 @@ public class MainActivity extends AppCompatActivity {
     private void setData(List<CardGroup> cardGroups) {
         swipe_refresh.setRefreshing(false);
         err_layout.setVisibility(View.GONE);
-//        shimmer_recycler_view.visibility = View.GONE
         rv_card_groups.setVisibility(View.VISIBLE);
         cardgroupAdapter.setGroupData(cardGroups);
     }
@@ -123,7 +117,6 @@ public class MainActivity extends AppCompatActivity {
      */
     private void showErrorScreen(String errorMessage) {
         swipe_refresh.setRefreshing(false);
-//        shimmer_recycler_view.visibility = View.GONE
         rv_card_groups.setVisibility(View.GONE);
         err_layout.setVisibility(View.VISIBLE);
         error_layout_tv_message.setText(errorMessage);
