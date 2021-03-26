@@ -9,6 +9,7 @@ import com.bumptech.glide.load.HttpException;
 import com.example.fampay.CardApplication;
 import com.example.fampay.R;
 import com.example.fampay.bean.CardGroup;
+import com.example.fampay.data.APIService;
 import com.example.fampay.data.Repository;
 import com.example.fampay.utilities.PreferenceHelper;
 
@@ -19,6 +20,7 @@ import java.util.concurrent.TimeoutException;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.annotations.NonNull;
+import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.observers.DisposableObserver;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
@@ -32,12 +34,14 @@ public class CardViewModel extends ViewModel {
     public List<CardGroup> cardGroups = new ArrayList<>();
     public String errorMessage;
     private Repository repository = new Repository();
+    private Observable<List<CardGroup>> call = APIService.fetchCardGroups();
+
 
     public void fetchConCards() {
-        repository.getCardGroups()
-                .subscribeOn(Schedulers.newThread())
+        call.subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(new DisposableObserver<List<CardGroup>>() {
+
 
                     @Override
                     public void onNext(@NonNull List<CardGroup> cardGroups) {
@@ -91,6 +95,6 @@ public class CardViewModel extends ViewModel {
         }
         return filteredList;
     }
-
-
 }
+
+

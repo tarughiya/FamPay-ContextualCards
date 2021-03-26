@@ -15,8 +15,8 @@ public class Repository {
      *
      * @return an [Observable] of list of card groups fetched from the API.
      */
-    public Call<Observable<List<CardGroup>>> getCardGroups(){
-        return APIService.fetchCardGroups();
-    }
+//    public Call<Observable<List<CardGroup>>> getCardGroups(){
+//        return (Call<Observable<List<CardGroup>>>) APIService.fetchCardGroups();
+//    }
 
 }

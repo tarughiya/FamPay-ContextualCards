@@ -20,19 +20,20 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    CardViewModel cardGroupViewModel = new ViewModelProvider(this).get(CardViewModel.class);
+
     private SwipeRefreshLayout swipe_refresh;
     private CardGroupAdapter cardgroupAdapter;
     private RecyclerView rv_card_groups;
     private LinearLayout err_layout;
     private TextView error_layout_tv_message;
+    CardViewModel cardGroupViewModel;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-
+         cardGroupViewModel = new ViewModelProvider(this).get(CardViewModel.class);
         cardgroupAdapter = new CardGroupAdapter(this);
         rv_card_groups.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         rv_card_groups.setAdapter(cardgroupAdapter);
