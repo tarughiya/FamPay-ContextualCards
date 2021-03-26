@@ -12,8 +12,8 @@ This project has been developed for an assignment given by the FamPay team.
 
 ### Building The Code
 
-1.  **Clone the repository using HTTP:
-**[https://github.com/tarughiya/FamPay-ContextualCards](https://github.com/tarughiya/FamPay-ContextualCards)
+1.  Clone the repository using HTTP:
+[https://github.com/tarughiya/FamPay-ContextualCards](https://github.com/tarughiya/FamPay-ContextualCards)
 1.  **Open Android Studio.**
 1.  **Click on ‘Open an existing Android Studio project’**
 1.  **Browse to the directory where you cloned the project and click OK.**
@@ -23,10 +23,10 @@ This project has been developed for an assignment given by the FamPay team.
 
 * Language: Java
 * Architecture: Model View ViewModel (MVVM)
-* Libraries: [Retrofit](https://github.com/square/retrofit)**,
+* Libraries: [Retrofit](https://github.com/square/retrofit),
 **[RxJava](https://github.com/ReactiveX/RxJava)**, LiveData, ViewModel,
 **[Material
 Components](https://github.com/material-components/material-components-android)**,
-**[Glide](https://github.com/bumptech/glide)
+[Glide](https://github.com/bumptech/glide)
 
 <br> 
